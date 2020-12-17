@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/recyclerViewListFragment">
+
+    <fragment
+        android:id="@+id/recyclerViewListFragment"
+        android:name="cat.itb.mylibrari.bookRecyclerViewFragment.RecyclerViewListFragment"
+        android:label="RecyclerViewListFragment" >
+        <action
+            android:id="@+id/action_recyclerViewListFragment_to_addBookFragment"
+            app:destination="@id/addBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBookFragment"
+        android:name="cat.itb.mylibrari.bookInformationFragment.AddBookFragment"
+        android:label="AddBookFragment" >
+        <action
+            android:id="@+id/action_addBookFragment_to_recyclerViewListFragment"
+            app:destination="@id/recyclerViewListFragment" />
+        <argument
+            android:name="ObjectBook"
+            app:argType="cat.itb.mylibrari.Book" />
+    </fragment>
+</navigation>
